@@ -1,5 +1,5 @@
-var api = "http://qrl.com:8117";
-var coinUnits = 1000000000000;
+var api = "http://45.33.52.242:8117";
+var coinUnits = 1000000000;
 var poolHost = "qrlmining.com";
 var irc = "irc.freenode.net/#monero-pools";
 var email = "support@qrlmining.com";

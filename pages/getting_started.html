@@ -66,22 +66,48 @@
 
 <h3>For <i class="fa fa-windows"></i> Windows users new to mining</h3>
 <p class="getting_started_windows">
-    You can <a class="btn btn-default btn-sm" target="_blank" id="easyminer_link"><i class="fa fa-download"></i> Download</a>
-    and run <a target="_blank" href="https://github.com/zone117x/cryptonote-easy-miner">cryptonote-easy-miner</a> <i class="fa fa-github"></i>
-    which will automatically generate your wallet address and run CPUMiner with the proper parameters.
+<a class="btn btn-default btn-sm" target="_blank" href="https://github.com/fireice-uk/xmr-stak/releases/download/2.4.5/xmr-stak-win64.zip" ><i class="fa fa-download"></i> XMR-Stak-win64.zip</a> <a class="btn btn-default btn-sm" target="_blank" href="https://github.com/fireice-uk/xmr-stak/blob/master/doc/usage.md" ><i class="fa fa-book"></i> XMR-Stak Documentation</a>
+
+<br>Unzip and run the .exe for XMR-stak on your windows PC. You will need a QRL address to setup the mining software. When prompted enter monero7 as the algo. This will allow you to mine with both CPU and GPU (supporting AMD and Nvidia) on the QRL network.<br>
+See the official documentation for XMR-Stak if you run into issues. 
 </p>
 
 <hr>
 
-<h3>Wallet & Daemon Software</h3>
+<h3>QRL Wallet & Documentation</h3>
 <p>
-    <ul>
-        <li><a target="_blank" href="http://monero.cc/getting-started/">Getting started with Monero</a></li>
-        <li>Monero information and news on its <a href="https://bitcointalk.org/index.php?topic=583449.0">BitcoinTalk announcement thread</a></li>
-    </ul>
+<a class="btn btn-default btn-sm" target="_blank" href="https://wallet.theqrl.org"><i class="fa fa-money" /> QRL Wallet </a>
+<a class="btn btn-default btn-sm" target="_blank" href="https://docs.theqrl.org"> <i class="fa fa-book" /> QRL Documentation</a> 
+</p>
+<p>Setup a QRL wallet and save all of the privare key information. You will use this as the deposit address and mining worker for the pool. If you need more information see the official documentation.</p>
+<hr>
+
+<h3>QRL Information</h3>
+<p>
+<a class="btn btn-default btn-sm" target="_blank" href="https://discord.gg/DwStjhU"><i class="fa fa-list-alt" /> QRL Discord Chat </a>
+<a class="btn btn-default btn-sm" target="_blank" href="https://www.reddit.com/r/QRL/"><i class="fa fa-reddit" />Reddit /r/QRL </a>
+<a class="btn btn-default btn-sm" target="_blank" href="https://bitcointalk.org/index.php?topic=1730273.0"><i class="fa fa-btc" /> QRL Announcement </a>
+</p>
+<p>
+The QRL community is glad to help out with any issues you run into. Chances are it has happened to someone in the chat already.
 </p>
 
 <hr>
+
+<h3>xmr-stak Config</h3>
+
+<p>Here is an example pools.txt file. Edit this replacing the wallet_address with your QRL wallet address.</p>
+
+<code> 
+"pool_list" : <br>
+[ <br>
+	{"pool_address" : "qrlmining.com:5555", "wallet_address" : "YOUR_ADDRESS_HERE", "rig_id" : "", "pool_password" : "x", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 }, <br>
+],<br>
+<br>
+"currency" : "monero7",
+</code>
+
+
 
 <h3>Mining Apps</h3>
 <div class="yourStats table-responsive">
@@ -96,6 +122,18 @@
         </tr>
         </thead>
         <tbody id="mining_apps">
+        <tr>
+            <td class="miningAppTitle">XMR-STAK (most used)</td>
+            <td>CPU/GPU</td>
+            <td><a target="_blank" href="https://github.com/fireice-uk/xmr-stak/"> <i class="fa fa-github" /> Github</a></td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <span>Example:</span>
+<code> ./xmr-stak</code>
+            </td>
+        </tr>
+
         <tr>
             <td class="miningAppTitle">CPUMiner (forked by LucasJones & Wolf)</td>
             <td>CPU</td>
@@ -119,7 +157,7 @@
         <tr>
             <td colspan="5">
                 <span>Example:</span>
-                <code>yam -c x -M stratum+tcp://<span class="exampleAddress">YOUR_WALLET_ADDRESS</span>:x@<span class="exampleHost"></span>:<span class="examplePort"></span>/xmr</code>
+                <code>yam -c x -M stratum+tcp://<span class="exampleAddress">YOUR_WALLET_ADDRESS</span>:x@<span class="exampleHost"></span>:<span class="examplePort"></span></code>
             </td>
         </tr>
         <tr>
@@ -195,7 +233,6 @@
         }
     };
 
-    document.getElementById('easyminer_link').setAttribute('href', easyminerDownload);
     document.getElementById('miningPoolHost').textContent = poolHost;
 
     var lastPortsJson = '';
