@@ -255,7 +255,7 @@
 
     var xhrPageLoading;
     function routePage(loadedCallback) {
-
+        console.log("currentPage" + currentPage);
         if (currentPage) currentPage.destroy();
         $('#page').html('');
         $('#loading').show();
