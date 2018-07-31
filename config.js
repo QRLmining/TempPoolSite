@@ -1,4 +1,4 @@
-var api = "https://testpool.qrlmining.info:8117";
+var api = "https://testpool.qrlmining.info:8119";
 var coinUnits = 1000000000;
 var poolHost = "qrlmining.com";
 var irc = "irc.freenode.net/#monero-pools";
